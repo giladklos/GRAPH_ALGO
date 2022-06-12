@@ -33,11 +33,12 @@ def best(arr):
     seq = [0, 0]
     for i in range(len(arr)):#O(n)
         sum = sum + arr[i]
+        count+=1
         if max < sum:
             if flag ==1:
-                seq[0] = i - count
+                seq[0] = i - count +1
                 flag = 0
-            count = count + 1
+            #count = count + 1
             max = sum
             seq[1] = i
 
