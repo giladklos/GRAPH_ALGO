@@ -10,6 +10,7 @@ from src.GraphElements import EdgeData
 from src.GraphElements import NodeData
 from src.create_nx_graph_from_DiGraph import create_nx_graph
 from src.Find_Graph_Diameter import diameter_dp, best
+from src import Build_Span_Tree
 G = DiGraph()
 n0 = NodeData(0, (0, -100, 0))
 n1 = NodeData(1, (100, 0, 0))
@@ -28,10 +29,13 @@ G.add_edge(3, 0, 1)
 G.add_edge(3, 1, 2)
 #print(dijkstra(0, 3, G))
 #create_nx_graph(G)
-a=(1,7,3,-13,2,1,10,-2,1,-20)
-mat,d,seq=diameter_dp(a)
-print(mat)
-print (d)
-print(seq)
-maxb,seqb= best(a)
-print(maxb,seqb)
+# a=(1,7,3,-13,2,1,10,-2,1,-20)
+# mat,d,seq=diameter_dp(a)
+# print(mat)
+# print (d)
+# print(seq)
+# maxb,seqb= best(a)
+# print(maxb,seqb)
+nodes=(1,2,1,3,1,2)
+sol=Build_Span_Tree.buildTree(nodes)
+print(sol)
