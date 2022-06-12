@@ -78,3 +78,13 @@ def circle_diameter_dp(arr):
                     seq[0] = i
                     seq[1] = j
     return mat, d, seq
+
+def cicle_best(arr):
+    sum_straight=np.sum(arr)
+    neg_arr=np.zeros(len(arr))
+    for i in range (len(arr)):
+        neg_arr[i]=-1*arr[i]
+    min_straight,seq=best(neg_arr)
+    min_straight=-min_straight
+    mx,seq=best(arr)
+    return max(mx,sum_straight-min_straight)
