@@ -9,7 +9,7 @@ from src.DiGraph import DiGraph
 from src.GraphElements import EdgeData
 from src.GraphElements import NodeData
 from src.create_nx_graph_from_DiGraph import create_nx_graph
-
+from src.Find_Graph_Diameter import diameter_dp, best
 G = DiGraph()
 n0 = NodeData(0, (0, -100, 0))
 n1 = NodeData(1, (100, 0, 0))
@@ -26,5 +26,12 @@ G.add_edge(1, 2, 3)
 G.add_edge(2, 3, 4)
 G.add_edge(3, 0, 1)
 G.add_edge(3, 1, 2)
-print(dijkstra(0, 3, G))
-create_nx_graph(G)
+#print(dijkstra(0, 3, G))
+#create_nx_graph(G)
+a=(3,-2,5,1)
+mat,d,seq=diameter_dp(a)
+print(mat)
+print (d)
+print(seq)
+maxb,seqb= best(a)
+print(maxb,seqb)
