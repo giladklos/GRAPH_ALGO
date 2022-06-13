@@ -20,17 +20,30 @@ n0 = NodeData(0, (0, -100, 0))
 n1 = NodeData(1, (100, 0, 0))
 n2 = NodeData(2, (50, 100, 0))
 n3 = NodeData(3, (-100, 0, 0))
+n4 = NodeData(4, (0, -100, 0))
+n5 = NodeData(5, (75, 0, 0))
+n6 = NodeData(6, (75, 100, 0))
+n7 = NodeData(7, (-75, 0, 0))
 
 G.add_node(n0.key, n0.location)
 G.add_node(n1.key, n1.location)
 G.add_node(n2.key, n2.location)
 G.add_node(n3.key, n3.location)
+G.add_node(n4.key, n4.location)
+G.add_node(n5.key, n5.location)
+G.add_node(n6.key, n6.location)
+G.add_node(n7.key, n7.location)
 
 G.add_edge(0, 1, 1)
 G.add_edge(1, 2, 3)
 G.add_edge(2, 3, 4)
 G.add_edge(3, 0, 1)
 G.add_edge(3, 1, 2)
+G.add_edge(4, 5, 1)
+G.add_edge(5, 6, 3)
+#G.add_edge(5, 6, 4)
+
+
 #print(dijkstra(0, 3, G))
 #create_nx_graph(G)
 # a=(1,2,-3,4,-7,9)
@@ -51,10 +64,5 @@ G.add_edge(3, 1, 2)
 # print (ind)    
 
 
-
-BFS.bfs(G,0)
-for v in G.get_all_v():
-    print(G.get_node(v).info)
-G.reset_color()   
-for v in G.get_all_v():
-    print(G.get_node(v).info)
+BFS.cc_find(G,0)
+   
