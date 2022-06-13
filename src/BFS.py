@@ -33,15 +33,25 @@ def bfs(G,s,d):
  # using a BFS search. prints the colors and the cc at the end   
 def cc_find(G,s):
     d=np.zeros(G.v_size())
-    d=bfs(G,0,d)
     count=1
+    d=bfs(G,0,d)
+    cc=np.zeros(G.v_size())
+    for i in range(len(cc)):
+        if not d[i]==np.inf and cc[i]==0:
+            cc[i]=count
+    
     for v in G.get_all_v():
         print(G.get_node(v).info)
     for i in range(len(d)):
         if d[i]==np.inf:
             count+=1
             d=bfs(G,i,d)
+            for i in range(len(cc)):
+                if not d[i]==np.inf and cc[i]==0:
+                     cc[i]=count
             for v in G.get_all_v():
                 print(G.get_node(v).info)
     G.reset_color()   
     print(count) 
+    for i in range(len(cc)):
+        print({i:cc[i]})
