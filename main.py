@@ -14,6 +14,7 @@ from src.Dijkstras_Shortest_Path_Algorithm import dijkstra
 from src.Find_Graph_Diameter import best, diameter_dp
 from src.Floyd_Warshall_Algo import Floyd_Warshall
 from src.GraphElements import EdgeData, NodeData
+from src import DFS
 
 G = DiGraph()
 n0 = NodeData(0, (0, -100, 0))
@@ -46,7 +47,7 @@ G.add_edge(4, 5, 1)
 
 
 #print(dijkstra(0, 3, G))
-#create_nx_graph(G)
+create_nx_graph(G)
 # a=(1,2,-3,4,-7,9)
 # d=Find_Graph_Diameter.cicle_best(a)
 #print(mat)
@@ -65,5 +66,10 @@ G.add_edge(4, 5, 1)
 # print (ind)    
 
 
-BFS.cc_find(G,0)
-BFS.bfs_diam(G,0)   
+# BFS.cc_find(G,0)
+# BFS.bfs_diam(G,0)   
+for i in G.get_all_v():
+    print(G.get_node(i).parent)
+DFS.dfs(G,0)
+for i in G.get_all_v():
+    print(G.get_node(i).parent)

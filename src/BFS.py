@@ -68,4 +68,5 @@ def bfs_diam(G,s):
         if dat>dmax and dat<np.inf:
             dmax=dat
             j=i
+            
     print (dmax)
