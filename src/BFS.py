@@ -34,14 +34,13 @@ def bfs(G,s,d):
 def cc_find(G,s):
     d=np.zeros(G.v_size())
     count=1
-    d=bfs(G,0,d)
+    d=bfs(G,s,d)
     cc=np.zeros(G.v_size())
     for i in range(len(cc)):
         if not d[i]==np.inf and cc[i]==0:
             cc[i]=count
     
-    for v in G.get_all_v():
-        print(G.get_node(v).info)
+    
     for i in range(len(d)):
         if d[i]==np.inf:
             count+=1
@@ -49,9 +48,24 @@ def cc_find(G,s):
             for i in range(len(cc)):
                 if not d[i]==np.inf and cc[i]==0:
                      cc[i]=count
-            for v in G.get_all_v():
-                print(G.get_node(v).info)
+           
     G.reset_color()   
     print(count) 
     for i in range(len(cc)):
         print({i:cc[i]})
+    
+def bfs_diam(G,s):
+    d=np.zeros(G.v_size())
+    dmax=0
+    j=0
+    d=bfs(G,s,d)
+    for i,dat in enumerate(d):
+        if dat>dmax and dat<np.inf:
+            dmax=dat
+            j=i
+    d=bfs(G,j,d)
+    for i,dat in enumerate(d):
+        if dat>dmax and dat<np.inf:
+            dmax=dat
+            j=i
+    print (dmax)

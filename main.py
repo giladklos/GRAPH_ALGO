@@ -40,9 +40,8 @@ G.add_edge(2, 3, 4)
 G.add_edge(3, 0, 1)
 G.add_edge(3, 1, 2)
 G.add_edge(4, 5, 1)
-G.add_edge(7, 2, 3)
-G.add_edge(2, 7, 3)
-create_nx_graph(G)
+
+#create_nx_graph(G)
 #G.add_edge(5, 6, 4)
 
 
@@ -67,4 +66,4 @@ create_nx_graph(G)
 
 
 BFS.cc_find(G,0)
-   
+BFS.bfs_diam(G,0)   
