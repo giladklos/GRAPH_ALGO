@@ -1,10 +1,10 @@
-
+#!/usr/bin/env python3
 from queue import PriorityQueue, Queue
 from random import random
 from tkinter.tix import ROW
 
-import matplotlib.pyplot as plt
-import networkx as nx
+#import matplotlib.pyplot as plt
+#import networkx as nx
 import numpy as np
 
 from src import BFS, Build_Span_Tree, Find_Graph_Diameter, find_max_submatrix
